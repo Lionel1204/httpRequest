@@ -1,0 +1,184 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+GET https://{{host}}/{{base_url}}/containers/{{container_id}}/definitions
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+###
+DELETE https://{{host}}/{{base_url}}/containers/{{container_id}}/definitions/{{definition_id}}
+Content-Type: application/json
+Authorization: Bearer {{auth_token}}
+
+###
+POST https://{{host}}/{{base_url}}/containers/{{container_id}}/definitions
+Authorization: Bearer {{auth_token}}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gWary
+
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="definition"
+{
+  "templateId": "7175bd3e-32df-11ec-ae52-0242ac110026",
+  "formId": "a8530ab0-5bdb-4185-b5c6-8330b1917858",
+  "candidateStarters": {
+    "O2Group": [
+      ""
+    ],
+    "O2User": [
+      "CMVNQT9ULBYW"
+    ]
+  },
+  "generator": "",
+  "lanes": [
+    {
+      "id": "Lane_1tyn3a9",
+      "name": "Initiator",
+      "nameLocId": "Initiator",
+      "permissions": [
+        {
+          "Action": "create,read",
+          "Effect": "Allow",
+          "Id": "permission_initiator_0",
+          "Subject-Match": "",
+          "Subjects": {
+            "O2Group": [
+              ""
+            ],
+            "O2User": [
+              "CMVNQT9ULBYW"
+            ],
+            "Service": [
+              "of9HjvmV4RriG8I9A8g9QssmGFqstN6E"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Lane_0ecss1f",
+      "name": "Reviewer 1",
+      "nameLocId": "Reviewer 1",
+      "permissions": [
+        {
+          "Action": "read,write",
+          "Effect": "Allow",
+          "Id": "permission_reviewer1_0",
+          "Subject-Match": "",
+          "Subjects": {
+            "O2Group": [
+              ""
+            ],
+            "O2User": [
+              "CMVNQT9ULBYW"
+            ],
+            "Service": [
+              "of9HjvmV4RriG8I9A8g9QssmGFqstN6E"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Lane_0p5azmp",
+      "name": "Reviewer 2",
+      "nameLocId": "Reviewer 2",
+      "permissions": [
+        {
+          "Action": "read,write",
+          "Effect": "Allow",
+          "Id": "permission_reviewer2_0",
+          "Subject-Match": "",
+          "Subjects": {
+            "O2Group": [
+              ""
+            ],
+            "O2User": [
+              "CMVNQT9ULBYW"
+            ],
+            "Service": [
+              "of9HjvmV4RriG8I9A8g9QssmGFqstN6E"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Lane_068sgjq",
+      "name": "Approver",
+      "nameLocId": "Approver",
+      "permissions": [
+        {
+          "Action": "read,write",
+          "Effect": "Allow",
+          "Id": "permission_approver_0",
+          "Subject-Match": "",
+          "Subjects": {
+            "O2Group": [
+              ""
+            ],
+            "O2User": [
+              "CMVNQT9ULBYW"
+            ],
+            "Service": [
+              "of9HjvmV4RriG8I9A8g9QssmGFqstN6E"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "name": "test21",
+  "nameLocId": "test20",
+  "serviceTasks": [
+    {
+      "actionId": "service_action_1",
+      "id": "Task_1832rge",
+      "name": "Output",
+      "nameLocId": "Output",
+      "parameters": {
+        "additionalProp1": {
+          "type": "string",
+          "value": {},
+          "valueInfo": {}
+        }
+      }
+    }
+  ],
+  "userTasks": [
+    {
+      "dueDateHandling": "3",
+      "id": "Task_1fsxexy",
+      "name": "Initial Review 1",
+      "nameLocId": "Initial Review 1",
+      "permissionIds": [
+        "permission_reviewer1_0"
+      ]
+    },
+    {
+      "dueDateHandling": "3",
+      "id": "Task_05lz7fy",
+      "name": "Final Review",
+      "nameLocId": "Final Review",
+      "permissionIds": [
+        "permission_approver_0"
+      ]
+    },
+    {
+      "dueDateHandling": "3",
+      "id": "Task_0158d87",
+      "name": "Initial Review 2",
+      "nameLocId": "Initial Review 2",
+      "permissionIds": [
+        "permission_reviewer2_0"
+      ]
+    }
+  ]
+}
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="bpmnDefinition"; filename="2-step-approval-group.bpmn"
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+###

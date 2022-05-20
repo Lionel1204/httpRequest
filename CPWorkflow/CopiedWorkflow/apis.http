@@ -1,0 +1,35 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+PATCH http://{{host}}/{{base_v3}}/projects/{{project_id}}/copied-project-workflows
+x-ads-token-data: {{ads_token_data}}
+x-ads-gateway-secret: {{ads_gateway_sec}}
+Content-Type: application/json
+
+{
+  "copyStatus": "pending",
+  "copyInfo": {
+    "pauseActions": ["COPY_WORKFLOW_DRAFT_DEFINITIONS"]
+  }
+}
+###
+
+GET https://developer-stg.api.autodesk.com/dm-qa/v3/projects/1f29e6f6-5801-4ba4-8fa4-09fbd29591c2/copied-project-workflows
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFhaDU0MXhrNDRtMFY2WlgxSDlkVFVUdnFrMXA3eWZRIn0.eyJzY29wZSI6WyJ1c2VyLXByb2ZpbGU6cmVhZCIsImRhdGE6d3JpdGUiLCJkYXRhOnJlYWQiLCJkYXRhOmNyZWF0ZSIsImRhdGE6c2VhcmNoIiwiY29kZTphbGwiLCJhY2NvdW50OnJlYWQiLCJhY2NvdW50OndyaXRlIl0sImNsaWVudF9pZCI6InRxQWtJWG03dzFoNWliN2VJZTVlYnh4bUFDUGdRSmJPIiwiYXVkIjoiaHR0cHM6Ly9hdXRvZGVzay5jb20vYXVkL2Fqd3RleHA2MCIsImp0aSI6IklUSnU0dTIzVlZQMTBpVEZpSmFlZVRUcXZ0RFZZRHNzMm5RQjFoYlE4dm1vSzVvRUFBM3ZTWmZQaE5acEpPQjAiLCJleHAiOjE2NDc4NTM4Mzh9.XmOHX7XEg03gRkVh8-ZSpZFYh2isSXw-MFMQBcr6WP7qi0bK_-6evadzrISD5bMjMt4r8LTapYqiw_QwH0gb05qiTlTp98p3JPamctq9Fdu_FGTsTjw_kdjjVflHxaakH2To7cvyVx3gZuUXYG--W_FweDoUoC9ZPvx6LjmzCpPJaOsT9ubfzOyLLJj7xXaM_WDhTJr8hk_bOYeSP7jrQbtIrimJGf3mBR3GerZMnHq66anbb6prYwSIoBm20ux7zX36JCKbYB0YwVdGbxXJ2WGlPuGmEjxiHE87SWcwQFtwxBkNqHuvoG4oETeCmXkolK4osMoNEKGM-LmN36xXJw
+x-request-id: Docs-lt-listCopiedWorkflows-listCopiedWorkflows-4899575d-7432-4ba8-b563-9ec57001a725","x-ads-ul-ctx-workflow-id":"Docs-lt-listCopiedWorkflows-listCopiedWorkflows-4899575d-7432-4ba8-b563-9ec57001a725
+x-ads-ul-ctx-head-span-id: 1-623832fe-29ab25782f4fd231574a835b
+x-ads-ul-ctx-caller-span-id: 3c5cf4ece208b161
+Accept-Encoding:gzip, deflate
+
+###
+
+GET http://{{host}}/{{base_v3}}/projects/{{project_id}}/copied-project-workflows
+x-ads-token-data: {{ads_token_data}}
+x-ads-gateway-secret: {{ads_gateway_sec}}
+Accept: application/json
+
+###

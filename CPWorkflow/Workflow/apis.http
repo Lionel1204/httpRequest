@@ -1,0 +1,147 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+POST http://{{host}}/{{base_v2}}/projects/{{project_id}}/workflows
+x-ads-token-data: {{ads_token_data}}
+x-ads-gateway-secret: {{ads_gateway_sec}}
+Content-Type: application/json
+
+{
+  "name": "test23",
+  "templateId": "c97c4087-146b-4152-b32d-a718fcbb7288",
+  "description": "The Three Step Approval workflow allows you to:1. Route documents through ",
+  "approvalOptions": [
+    {
+      "id": "b2a3c3b7-4fef-40a4-868b-981b23e7182f",
+      "label": "Rejected",
+      "value": "rejected",
+      "iconValue": "rejected-cross",
+      "buildIn": true
+    },
+    {
+      "id": "f44e623d-f04f-47fe-8195-efc43d1d985b",
+      "label": "Approved",
+      "value": "approved",
+      "iconValue": "approved-check",
+      "buildIn": true
+    }
+  ],
+  "steps": [
+    {
+      "id": "Lane_1tyn3a9",
+      "name": "Initiator",
+      "type": "initiator",
+      "nameLocId": "initiator",
+      "candidates": {
+        "roles": [],
+        "users":[
+          {
+            "oxygenId":"U5XCJQ22TL8G"
+          }
+        ],
+        "companies": []
+      }
+    },
+    {
+      "id": "Lane_0ecss1f",
+      "name": "Reviewer 1",
+      "taskName": "Initial Review 1",
+      "type": "reviewer",
+      "nameLocId": "reviewer1",
+      "candidates": {
+        "roles": [],
+        "users": [
+          {
+            "oxygenId":"U5XCJQ22TL8G"
+          },
+          {
+            "oxygenId":"9MVAPZMKEKAN"
+          }
+        ],
+        "companies": []
+      },
+      "duration": 3,
+      "groupReview": {
+        "enabled": true,
+        "maxTaskNumber": 3,
+        "completionCondition": 2,
+        "meta":{
+          "type":"minimum"
+        }
+      }
+    },
+    {
+      "id": "Lane_0p5azmp",
+      "name": "Reviewer 2",
+      "taskName": "Initial Review 2",
+      "type": "reviewer",
+      "nameLocId": "reviewer2",
+      "candidates": {
+        "roles": [],
+        "users": [ {
+          "oxygenId":"U5XCJQ22TL8G"
+        }, {
+          "oxygenId": "9MVAPZMKEKAN"
+        }],
+        "companies": []
+      },
+      "duration": 3,
+      "groupReview": {
+        "enabled": true,
+        "maxTaskNumber": 2,
+        "completionCondition": 2,
+        "meta":{
+          "type":"minimum"
+        }
+      }
+    },
+    {
+      "id": "Lane_068sgjq",
+      "name": "Approver",
+      "taskName": "doc-approver",
+      "nameLocId": "approver",
+      "candidates": {
+        "roles": [],
+        "users":[
+          {
+            "oxygenId":"U5XCJQ22TL8G"
+          }
+        ],
+        "companies": []
+      },
+      "duration": 3
+    }
+  ],
+  "rules": [{
+    "taskId": "Task_1832rge",
+    "parameters": {
+      "enabled": true,
+      "condition": "All",
+      "folderPath": "delbQQtfTCCLgDGucz0xAA",
+      "folderUrn": "urn:adsk.wipqa:fs.folder:co.delbQQtfTCCLgDGucz0xAA"
+    }
+  }],
+  "descriptiveLanguage": "Memo"
+}
+
+
+###
+GET http://{{host}}/{{base_v2}}/projects/{{project_id}}/workflows/c79f2c3f-4242-48a6-a1a9-7a9393476010
+x-ads-token-data: {{ads_token_data}}
+x-ads-gateway-secret: {{ads_gateway_sec}}
+Content-Type: application/json
+
+###
+GET http://{{host}}/{{base_v2}}/projects/{{project_id}}/workflows
+x-ads-token-data: {{ads_token_data}}
+x-ads-gateway-secret: {{ads_gateway_sec}}
+Content-Type: application/json
+
+###
+GET http://{{host}}/{{base_v2}}/projects/{{project_id}}/workflows
+x-ads-token-data: {{ads_token_data}}
+x-ads-gateway-secret: {{ads_gateway_sec}}
+Content-Type: application/json

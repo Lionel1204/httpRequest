@@ -1,0 +1,5 @@
+GET http://{{host}}/{{base_v2}}/projects/{{project_id}}/reviews/{{review_id}}/versions?limit=0
+x-ads-token-data: {{ads_token_data}}
+x-ads-gateway-secret: {{ads_gateway_sec}}
+Content-Type: application/json
+###

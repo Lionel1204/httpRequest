@@ -1,0 +1,30 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+POST https://{{host}}/authentication/v1/authenticate
+Content-Type: application/x-www-form-urlencoded
+
+client_id={{client_id}}&client_secret={{client_secret}}&grant_type=client_credentials
+
+> {% client.global.set("auth_token", response.body.access_token); %}
+
+###
+
+# POST https://docs.b360-qa.autodesk.com/oauth/token
+POST https://docs.b360-staging.autodesk.com/oauth/token
+Content-Type: application/json
+User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0)
+
+{
+  "grant_type": "password",
+  "username": "bim.360.valyria.cp.test@autodesk.com",
+  "password": "Autodesk1"
+}
+
+###
+
+
